@@ -1,4 +1,4 @@
-const joiToOpenApiSpec = require('../lib');
+const joiToOpenApiSpec = require('../lib/open-api-spec');
 
 joiToOpenApiSpec.info.set({
   title: 'Sample API',
@@ -10,3 +10,22 @@ joiToOpenApiSpec.servers.add({
   url: 'http://api.example.com/v1',
   description: 'Optional server description, e.g. Main (production) server',
 });
+
+console.log(joiToOpenApiSpec.build());
+
+const path = {
+  path: '',
+  method: '',
+  description: '',
+  summary: '',
+  parameters: {
+    headers: {
+      id: Joi.Object().required(),
+    },
+    path: {},
+    query: {},
+    body: {}
+  }
+};
+
+joiToOpenApiSpec.paths.set('/user/name');
