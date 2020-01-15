@@ -29,3 +29,4 @@ const path = {
 };
 
 joiToOpenApiSpec.paths.set('/user/name');
+
